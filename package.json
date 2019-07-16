@@ -1,0 +1,42 @@
+{
+  "name": "array-methods",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "npm run test -- --watch",
+    "start": "node server.js",
+    "start:watch": "nodemon server.js"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DirtDeodara/array-methods.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DirtDeodara/array-methods/issues"
+  },
+  "homepage": "https://github.com/DirtDeodara/array-methods#readme",
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "express": "^4.17.1",
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
+    "superagent": "^5.1.0",
+    "supertest": "^4.0.2"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "mongoose": "^5.6.4"
+  }
+}
