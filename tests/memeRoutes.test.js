@@ -22,26 +22,26 @@ describe('meme routes tests', () => {
     return request(app)
       .post('/api/v1/memes')
       .send({
-        topField: 'the start of something witty',
+        top: 'the start of something witty',
         image: 'some URL',
-        bottomField: 'the end of something witty'
+        bottom: 'the end of something witty'
       })
       .then(res => {
         expect(res.body).toEqual({
           __v: 0,
           _id: expect.any(String),
-          topField: 'the start of something witty',
+          top: 'the start of something witty',
           image: 'some URL',
-          bottomField: 'the end of something witty'
+          bottom: 'the end of something witty'
         });
       });
   });
 
   it('can GET all memes from Db', async() => {
     const meme = await Meme.create({ 
-      topField: 'the start of something witty',
+      top: 'the start of something witty',
       image: 'some URL',
-      bottomField: 'the end of something witty'
+      bottom: 'the end of something witty'
     });
     return request(app)
       .get('/api/v1/memes')
@@ -53,9 +53,9 @@ describe('meme routes tests', () => {
 
   it('can get a meme by id', async() => {
     const meme = await Meme.create({
-      topField: 'the start of something witty',
+      top: 'the start of something witty',
       image: 'some URL',
-      bottomField: 'the end of something witty'
+      bottom: 'the end of something witty'
     });
     return request(app)
       .get(`/api/v1/memes/${meme._id}`)
@@ -63,33 +63,33 @@ describe('meme routes tests', () => {
         expect(res.body).toEqual({
           __v: 0,
           _id: expect.any(String),
-          topField: 'the start of something witty',
+          top: 'the start of something witty',
           image: 'some URL',
-          bottomField: 'the end of something witty'
+          bottom: 'the end of something witty'
         });
       });
   });
 
   it('can update a meme with PUT', async() => {
     const meme = await Meme.create({
-      topField: 'the start of something witty',
+      top: 'the start of something witty',
       image: 'some URL',
-      bottomField: 'the end of something witty'
+      bottom: 'the end of something witty'
     });
     return request(app)
       .put(`/api/v1/memes/${meme._id}`)
       .send({
-        topField: 'the start of something even more witty',
+        top: 'the start of something even more witty',
         image: 'some URL',
-        bottomField: 'the end of something even more witty'
+        bottom: 'the end of something even more witty'
       })
       .then(res => {
         expect(res.body).toEqual({
           __v: 0,
           _id: expect.any(String),
-          topField: 'the start of something even more witty',
+          top: 'the start of something even more witty',
           image: 'some URL',
-          bottomField: 'the end of something even more witty'
+          bottom: 'the end of something even more witty'
         });
       });
       
@@ -97,9 +97,9 @@ describe('meme routes tests', () => {
 
   it('can DELETE a meme by id', async() => {
     const meme = await Meme.create({
-      topField: 'the start of something witty',
+      top: 'the start of something witty',
       image: 'some URL',
-      bottomField: 'the end of something witty'
+      bottom: 'the end of something witty'
     });
     return request(app)
       .delete(`/api/v1/memes/${meme._id}`)
