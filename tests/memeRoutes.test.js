@@ -18,7 +18,7 @@ describe('meme routes tests', () => {
     return mongoose.connection.close();
   });
 
-  it('can create a profile with POST', () => {
+  it('can create a meme with POST', () => {
     return request(app)
       .post('/api/v1/memes')
       .send({
